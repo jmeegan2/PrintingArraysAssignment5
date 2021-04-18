@@ -18,7 +18,7 @@ arraySWORD SWORD -1, -2			;They are capable of representing a negative integer. 
 ;CODE SEGMENT
 .code 
 main PROC
-
+;just wanna get at least one commit today 
 ; SBYTE array displaying -1 to -20, This would be considered an instance where the example is mobing from element to element with offset ferived from the
 ;"TYPE" directive
 

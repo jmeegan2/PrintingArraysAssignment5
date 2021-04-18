@@ -13,8 +13,8 @@ ExitProcess PROTO, dwExitCode:DWORD
 ;Data Segment
 .data
 arrayBYTE SBYTE -1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18,-19,-20 		;These three balues are used to denote the contained binary encoding should be treated as a 'signed' value. 
-arraySWORD SWORD -20		;They are capable of representing a negative integer. PLesase keep in mind that this is only done for programmers
-	
+arraySWORD SWORD -1		;They are capable of representing a negative integer. PLesase keep in mind that this is only done for programmers
+arraySDWORD	SDWORD 	
 ;CODE SEGMENT
 .code 
 main PROC

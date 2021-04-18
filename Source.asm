@@ -13,7 +13,7 @@ ExitProcess PROTO, dwExitCode:DWORD
 ;Data Segment
 .data
 arrayBYTE SBYTE -1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18,-19,-20 		;These three balues are used to denote the contained binary encoding should be treated as a 'signed' value. 
-arraySWORD SWORD -1, -2			;They are capable of representing a negative integer. PLesase keep in mind that this is only done for programmers
+arraySWORD SWORD -20		;They are capable of representing a negative integer. PLesase keep in mind that this is only done for programmers
 	
 ;CODE SEGMENT
 .code 
@@ -105,11 +105,9 @@ MOVSX EAX, arrayBYTE
 	;so im gonna change this line then push to github
 ;SWORD array will display -1 to -20 using a static count and WriteDec
 MOVZX EAX, [arraySWORD]
-	CALL WriteInt
+	CALL WriteBinB
 	CALL Crlf
-	MOVZX EAX, [arraySWORD + 1]
-	CALL WriteInt
-	CALL Crlf
+	
 	 
 INVOKE ExitProcess, 0
 main ENDP

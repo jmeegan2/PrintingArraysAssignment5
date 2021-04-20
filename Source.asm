@@ -9,7 +9,7 @@ INCLUDELIB Irvine32.lib
 
 ; PROTOTYPES
 ExitProcess PROTO, dwExitCode:DWORD
-;trynna get my git contributions up 
+;trynna get my git contributions up part 2
 ;Data Segment
 .data
 arrayBYTE SBYTE -1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18,-19,-20 		;These three balues are used to denote the contained binary encoding should be treated as a 'signed' value. 

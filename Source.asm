@@ -1,3 +1,6 @@
+;By James Meegan 
+;Assignment 5
+
 ; EXTERNAL DEPENDENCIES
 INCLUDE Irvine32.inc
 INCLUDELIB Irvine32.lib
@@ -12,9 +15,9 @@ ExitProcess PROTO, dwExitCode:DWORD
 ;trynna get my git contributions up part 2
 ;Data Segment
 .data
-arrayBYTE SBYTE -1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18,-19,-20 		;These three balues are used to denote the contained binary encoding should be treated as a 'signed' value. 
-arrayWORD			SWORD	1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
-arraySDWORD	SDWORD 	1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+arrayBYTE SBYTE -1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18,-19,-20 		;These three values are used to denote the contained binary encoding should be treated as a 'signed' value. 
+arraySWORD			SWORD	1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20				;The NEG instruction will be used to display this as a negative
+arraySDWORD	SDWORD 	1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20						;The NEG instruction will be used to display this as a negative
 ;CODE SEGMENT
 .code 
 main PROC
@@ -25,7 +28,7 @@ MOVSX EAX, arrayBYTE
 	MOV EBX, TYPE SBYTE			
 	CALL WriteInt
 	CALL Crlf
-	MOVSX EAX,[arrayBYTE + 1]		
+	MOVSX EAX,[arrayBYTE + 1]		;The addition of the 1 is used to move onto the next number in the array
 	MOV EBX, TYPE SBYTE			
 	CALL WriteInt
 	CALL Crlf
@@ -105,102 +108,102 @@ MOVSX EAX, arrayBYTE
 	
 ;SWORD data displayed here 
 
-	MOVSX EAX, [arrayWORD]
+	MOVSX EAX, [arraySWORD]	;load number into the register 
+	NEG eax					;NEG instruction used to negate eax and then will cause a negative number to be called in next line
+	CALL WriteInt
+	CALL Crlf
+	
+	MOVSX EAX, [arraySWORD + 2]			;The addition of the 2 is used to move onto the next number in the array
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 2]
+	MOVSX EAX, [arraySWORD + 4]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 4]
+	MOVSX EAX, [arraySWORD + 6]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 6]
+	MOVSX EAX, [arraySWORD + 8]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 8]
+	MOVSX EAX, [arraySWORD + 10]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 10]
+	MOVSX EAX, [arraySWORD + 12]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 12]
+	MOVSX EAX, [arraySWORD + 14]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 14]
+	MOVSX EAX, [arraySWORD + 16]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 16]
+	MOVSX EAX, [arraySWORD + 18]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 18]
+	MOVSX EAX, [arraySWORD + 20]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 20]
+	MOVSX EAX, [arraySWORD + 22]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 22]
+	MOVSX EAX, [arraySWORD + 24]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 24]
+	MOVSX EAX, [arraySWORD + 26]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 26]
+	MOVSX EAX, [arraySWORD + 28]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 28]
+	MOVSX EAX, [arraySWORD + 30]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 30]
+	MOVSX EAX, [arraySWORD + 32]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 32]
+	MOVSX EAX, [arraySWORD + 34]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 34]
+	MOVSX EAX, [arraySWORD + 36]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
 	
-	MOVSX EAX, [arrayWORD + 36]
-	NEG eax
-	CALL WriteInt
-	CALL Crlf
-	
-	MOVSX EAX, [arrayWORD + 38]
+	MOVSX EAX, [arraySWORD + 38]
 	NEG eax
 	CALL WriteInt
 	CALL Crlf
@@ -214,7 +217,7 @@ MOVSX EAX, arrayBYTE
 	CALL Crlf
 
 	
-	MOV EAX, [arraySDWORD + 4]
+	MOV EAX, [arraySDWORD + 4]			;The addition of the 4 is used to move onto the next number in the array
 	NEG eax
 	CALL WriteInt
 	CALL Crlf

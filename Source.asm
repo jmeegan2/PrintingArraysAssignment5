@@ -13,8 +13,8 @@ ExitProcess PROTO, dwExitCode:DWORD
 ;Data Segment
 .data
 arrayBYTE SBYTE -1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18,-19,-20 		;These three balues are used to denote the contained binary encoding should be treated as a 'signed' value. 
-;arraySWORD SWORD -1		comeback to it later 4/18
-arraySDWORD	SDWORD 	-1
+arrayWORD			WORD	15, 20, 30, 40, 50		
+;arraySDWORD	SDWORD 	-1
 ;CODE SEGMENT
 .code 
 main PROC
@@ -104,11 +104,10 @@ MOVSX EAX, arrayBYTE
 	CALL Crlf
 	;so im gonna change this line then push to github
 ;SWORD array will display -1 to -20 using a static count and WriteDec
-MOVZX EAX, arraySDWORD
-MOV EBX, Type SDWORD
-	CALL WriteInt
+
+	MOVZX EAX, [arrayWORD]
+	CALL WriteDec
 	CALL Crlf
-	
 	 
 INVOKE ExitProcess, 0
 main ENDP

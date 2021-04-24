@@ -22,6 +22,11 @@ arraySDWORD	SDWORD 	1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20						;The
 .code 
 main PROC
 
+;current grade 44/50 you need to to do the following 
+;You are not demonstrating how to keep track of a	
+;count with (+1) increments using the TYPE keyword.
+
+
 ;SBYTE data displayed here 
 
 MOVSX EAX, arrayBYTE
